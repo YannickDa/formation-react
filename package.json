@@ -1,0 +1,19 @@
+{
+  "name": "formation-react",
+  "version": "1.0.0",
+  "description": "Ce repo est utilisé dans le cadre de la formation React que je propose.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YannickDa/formation-react.git"
+  },
+  "author": "Yannick Dalbin <yannick@idvive.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YannickDa/formation-react/issues"
+  },
+  "homepage": "https://github.com/YannickDa/formation-react#readme"
+}
