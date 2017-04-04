@@ -7,13 +7,8 @@ class HelloWorld extends Component {
   }
 }
 
-class Application extends Component {
+export default class Application extends Component {
   render() {
     return <HelloWorld {...this.props} />
   }
 }
-
-render(
-  <Application name="Yannick" />,
-  document.getElementById("app")
-)
