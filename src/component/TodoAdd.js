@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-export class TodoAdd extends Component {
+export default class TodoAdd extends Component {
   constructor(props, children) {
     super(props, children)
 
@@ -20,7 +20,7 @@ export class TodoAdd extends Component {
   render() {
     return (
       <form action method="post" className="TodoAdd">
-        <input type="text" onKeypress={this._handleInput} />
+        <input type="text" onKeyPress={this._handleInput} />
         <button type="submit">Ajouter</button>
       </form>
     )
