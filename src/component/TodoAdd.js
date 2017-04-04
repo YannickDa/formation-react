@@ -12,6 +12,16 @@ class TodoAdd extends Component {
     }
 
     this._handleInput = this.handleInput.bind(this)
+    this._handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.addTodo(this.state.todo)
+    e.currentTarget.reset()
+    this.setState({
+      todo: ""
+    })
   }
 
   handleInput(e) {
@@ -22,8 +32,13 @@ class TodoAdd extends Component {
 
   render() {
     return (
-      <form action method="post" className="TodoAdd">
-        <input type="text" onKeyPress={this._handleInput} />
+      <form
+        action
+        method="post"
+        className="TodoAdd"
+        onSubmit={this._handleSubmit}
+      >
+        <input type="text" onKeyUp={this._handleInput} />
         <button type="submit">Ajouter</button>
       </form>
     )
