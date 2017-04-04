@@ -8,4 +8,9 @@ var Application = React.createClass({
   }
 })
 
-ReactDOM.render(React.createElement(Application), document.getElementById("app"))
+ReactDOM.render(
+  React.createElement(Application, {
+    name: "Yannick"
+  }),
+  document.getElementById("app")
+)
