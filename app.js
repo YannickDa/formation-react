@@ -1,5 +1,5 @@
 var HelloWorld = props => {
-  return React.createElement("div", null, "Hello")
+  return React.createElement("div", null, "Hello " + props.name)
 }
 
 var Application = React.createClass({
