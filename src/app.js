@@ -1,16 +1,19 @@
-class HelloWorld extends React.Component {
+import React, { Component } from "react"
+import { render } from "react-dom"
+
+class HelloWorld extends Component {
   render() {
     return <div>Hello {this.props.name}</div>
   }
 }
 
-class Application extends React.Component {
+class Application extends Component {
   render() {
     return <HelloWorld {...this.props} />
   }
 }
 
-ReactDOM.render(
+render(
   <Application name="Yannick" />,
   document.getElementById("app")
 )
