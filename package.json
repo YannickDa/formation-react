@@ -4,7 +4,8 @@
   "description": "Ce repo est utilisé dans le cadre de la formation React que je propose.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "$(npm bin)/webpack --config ./webpack.config.js"
   },
   "repository": {
     "type": "git",
