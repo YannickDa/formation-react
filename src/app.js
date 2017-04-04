@@ -9,6 +9,6 @@ class HelloWorld extends Component {
 
 export default class Application extends Component {
   render() {
-    return <HelloWorld {...this.props} />
+    return <HelloWorld name="Yannick" />
   }
 }
