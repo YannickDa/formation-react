@@ -1,16 +1,16 @@
-var HelloWorld = props => {
-  return React.createElement("div", null, "Hello " + props.name)
+class HelloWorld extends React.Component {
+  render() {
+    return <div>Hello {this.props.name}</div>
+  }
 }
 
-var Application = React.createClass({
-  render: function() {
-    return React.createElement(HelloWorld, { name: this.props.name })
+class Application extends React.Component {
+  render() {
+    return <HelloWorld {...this.props} />
   }
-})
+}
 
 ReactDOM.render(
-  React.createElement(Application, {
-    name: "Yannick"
-  }),
+  <Application name="Yannick" />,
   document.getElementById("app")
 )
