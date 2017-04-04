@@ -1,4 +1,4 @@
-var HelloWorld = () => {
+var HelloWorld = props => {
   return React.createElement("div", null, "Hello World !")
 }
 
