@@ -4,7 +4,7 @@ var HelloWorld = () => {
 
 var Application = React.createClass({
   render: function() {
-    return React.createElement(HelloWorld)
+    return React.createElement(HelloWorld, { name: this.props.name })
   }
 })
 
