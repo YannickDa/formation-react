@@ -1,6 +1,9 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
 
-export default class TodoAdd extends Component {
+import { addTodo } from "../actions/todo"
+
+class TodoAdd extends Component {
   constructor(props, children) {
     super(props, children)
 
@@ -26,3 +29,9 @@ export default class TodoAdd extends Component {
     )
   }
 }
+
+const connectedTodoAdd = connect(null, dispatch => ({
+  addTodo: todo => dispatch(addTodo(todo))
+}))(TodoAdd)
+
+export default connectedTodoAdd

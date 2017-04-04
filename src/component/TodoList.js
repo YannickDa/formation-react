@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
 
 class Todo extends Component {
   render() {
@@ -6,7 +7,7 @@ class Todo extends Component {
   }
 }
 
-export default class TodoList extends Component {
+class TodoList extends Component {
   render() {
     return (
       <ul className="TodoList">
@@ -15,3 +16,9 @@ export default class TodoList extends Component {
     )
   }
 }
+
+const connectedTodoList = connect(store => ({
+  todos: store.todo.todos
+}))(TodoList)
+
+export default connectedTodoList
