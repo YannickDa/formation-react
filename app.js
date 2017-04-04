@@ -4,6 +4,6 @@ var HelloWorld = () => {
 
 var Application = React.createClass({
   render: function() {
-    return
+    return React.createElement(HelloWorld)
   }
 })
