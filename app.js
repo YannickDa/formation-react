@@ -7,3 +7,5 @@ var Application = React.createClass({
     return React.createElement(HelloWorld)
   }
 })
+
+ReactDOM.render(React.createElement(Application), document.getElementById("app"))
