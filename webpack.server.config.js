@@ -14,5 +14,6 @@ module.exports = {
     filename: "server.js"
   },
   target: "node",
-  module: moduleConfig
+  module: moduleConfig,
+  resolve: config.resolve
 }

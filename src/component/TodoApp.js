@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 
-import TodoLinks from "./TodoLinks"
-import TodoList from "./TodoList"
-import TodoAdd from "./TodoAdd"
+import TodoLinks from "component/TodoLinks"
+import TodoList from "component/TodoList"
+import TodoAdd from "component/TodoAdd"
 
 export default class TodoApp extends PureComponent {
   render() {

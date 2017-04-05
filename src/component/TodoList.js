@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react"
 import { connect } from "react-redux"
-import { completeTodo, getTodos } from "../actions/todo"
+import { completeTodo, getTodos } from "actions/todo"
 
 class Todo extends PureComponent {
   constructor(props, children) {

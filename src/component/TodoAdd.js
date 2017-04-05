@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react"
 import { connect } from "react-redux"
 
-import { addTodo } from "../actions/todo"
+import { addTodo } from "actions/todo"
 
 class TodoAdd extends PureComponent {
   constructor(props, children) {

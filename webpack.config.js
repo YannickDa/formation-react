@@ -24,6 +24,14 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+  resolve: {
+    alias: {
+      component: path.resolve(__dirname, "src", "component"),
+      actions: path.resolve(__dirname, "src", "actions"),
+      reducers: path.resolve(__dirname, "src", "reducers"),
+      store: path.resolve(__dirname, "src", "store")
+    }
+  },
   devServer: {
     host: "localhost",
     port: 8080,
