@@ -18,3 +18,12 @@ app.use(router.routes())
 app.use(async ctx => {
   await send(ctx, "index.html")
 })
+
+app.listen(3000, err => {
+  if (err) {
+    console.error("Error when running server", err)
+    return
+  } 
+
+  console.log("Server running on port 3000")
+})
