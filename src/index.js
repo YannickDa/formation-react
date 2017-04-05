@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { AppContainer } from "react-hot-loader"
 import { render as renderDOM } from "react-dom"
 import { Provider } from "react-redux"
+import { BrowserRouter } from "react-router-dom"
 
 import configureStore from "./store/configureStore"
 
@@ -15,7 +16,9 @@ const render = Container =>
   renderDOM(
     <AppContainer>
       <Provider store={store}>
-        <Container />
+        <BrowserRouter>
+          <Container />
+        </BrowserRouter>
       </Provider>
     </AppContainer>,
     rootEl
