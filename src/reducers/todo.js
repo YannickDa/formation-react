@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO } from "../actions/todo"
+import { ADD_TODO, COMPLETE_TODO, SET_TODOS } from "../actions/todo"
 
 const initialState = {
   todos: []
@@ -22,6 +22,10 @@ export default (todo = initialState, action) => {
           }
           return t
         })
+      })
+    case SET_TODOS:
+      return Object.assign({}, todo, {
+        todos: data
       })
     default:
       return todo
