@@ -1,7 +1,7 @@
-import React, { Component } from "react"
+import React, { PureComponent } from "react"
 import { Link } from "react-router-dom"
 
-export default class TodoLinks extends Component {
+export default class TodoLinks extends PureComponent {
   render() {
     const matchUrl = this.props.match.url
 

@@ -1,8 +1,8 @@
-import React, { Component } from "react"
+import React, { PureComponent } from "react"
 import { connect } from "react-redux"
 import { completeTodo, getTodos } from "../actions/todo"
 
-class Todo extends Component {
+class Todo extends PureComponent {
   constructor(props, children) {
     super(props, children)
 
@@ -22,7 +22,7 @@ class Todo extends Component {
   }
 }
 
-class TodoList extends Component {
+class TodoList extends PureComponent {
   constructor(props, children) {
     super(props, children)
 
