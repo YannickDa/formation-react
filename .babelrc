@@ -1,9 +1,25 @@
 {
-  "presets": [
-    ["es2015", {modules: false}],
-    "react"
-  ],
-  "plugins": [
-    "react-hot-loader/babel"
-  ]
+  "env": {
+    "server": {
+      "presets": [
+        "react",
+        ["env", {
+          "targets": { "node": 7 },
+          "modules": false
+        }]
+      ]
+    },
+    "browser": {
+      "presets": [
+        "react",
+        ["env", {
+          "targets": { "ie": 10 },
+          "modules": false
+        }]
+      ],
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    }
+  }
 }
