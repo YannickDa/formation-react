@@ -20,6 +20,15 @@
       "plugins": [
         "react-hot-loader/babel"
       ]
+    },
+    "browser-prod": {
+      "presets": [
+        "react",
+        ["env", {
+          "targets": { "ie": 10 },
+          "modules": false
+        }]
+      ]
     }
   }
 }

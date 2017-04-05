@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build-server && npm run build-client",
+    "build-server": "BABEL_ENV=server $(npm bin)/webpack --config ./webpack.server.prod.config.js",
+    "build-client": "BABEL_ENV=browser-prod $(npm bin)/webpack --config ./webpack.prod.config.js",
     "dev": "npm-run-all --parallel dev-server-build dev-server-start dev-client",
     "dev-server-build": "BABEL_ENV=server $(npm bin)/webpack --watch --config ./webpack.server.config.js",
     "dev-server-start": "cd build && $(npm bin)/nodemon ./server.js --watch ./",
