@@ -17,8 +17,17 @@ class TodoList extends Component {
   }
 }
 
-const connectedTodoList = connect(store => ({
-  todos: store.todo.todos
-}))(TodoList)
+const connectedTodoList = connect((store, ownProps) => {
+  let { filter } = ownProps
+  if (filter !== undefined) {
+    filter = filter === "completed" ? true:false
+  }
+
+  return {
+    todos: store.todo.todos.filter(todo => (
+      filter === undefined || todo.completed === filter
+    ))
+  }
+})(TodoList)
 
 export default connectedTodoList

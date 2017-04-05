@@ -9,7 +9,7 @@ export default class TodoApp extends Component {
     return (
       <div className="TodoApp">
         <TodoLinks match={this.props.match} />
-        <TodoList />
+        <TodoList filter={this.props.match.params.filter} />
         <TodoAdd />
       </div>
     )
