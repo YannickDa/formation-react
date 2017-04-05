@@ -11,7 +11,7 @@ export default (todo = initialState, action) => {
       return Object.assign({}, todo, {
         todos: [
           ...todo.todos,
-          { label: data, completed: false }
+          data
         ]
       })
     case COMPLETE_TODO:

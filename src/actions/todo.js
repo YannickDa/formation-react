@@ -3,9 +3,20 @@ export const COMPLETE_TODO = "COMPLETE_TODO"
 export const SET_TODOS = "SET_TODOS"
 
 export const addTodo = todo => {
-  return {
-    type: ADD_TODO,
-    data: todo
+  const theTodo = { label: todo, completed: false }
+  return dispatch => {
+    dispatch({
+      type: ADD_TODO,
+      data: theTodo
+    })
+
+    return fetch("/todo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(theTodo)
+    })
   }
 }
 
