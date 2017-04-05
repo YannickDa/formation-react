@@ -7,12 +7,20 @@ import send from "koa-send"
 
 import indexHtml from "./index.html"
 
+const todos = [
+  { label: "Todo 1", completed: false }
+]
+
 const app = new Koa()
 
 app.use(mount("/assets", serve("assets")))
 app.use(bodyParser())
 
 const router = koaRouter()
+
+router.get("/todos", async ctx => {
+  ctx.body = todos
+})
 
 app.use(router.routes())
    .use(router.allowedMethods())
