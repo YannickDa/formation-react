@@ -8,7 +8,7 @@ import configureStore from "store/configureStore"
 
 import App from "component/app"
 
-const store = configureStore()
+const store = configureStore(window.__data)
 
 const rootEl = document.getElementById("app")
 
