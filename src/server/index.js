@@ -22,6 +22,12 @@ router.get("/todos", async ctx => {
   ctx.body = todos
 })
 
+router.post("/todo", async ctx => {
+  const todo = ctx.request.body
+  todos.push(todo)
+  ctx.body = null
+})
+
 app.use(router.routes())
    .use(router.allowedMethods())
 
