@@ -33,10 +33,6 @@ class TodoList extends PureComponent {
     this.props.completeTodo(todo)
   }
 
-  componentWillMount() {
-    this.props.getTodos()
-  }
-
   render() {
     return (
       <ul className="TodoList">
