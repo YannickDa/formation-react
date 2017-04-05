@@ -3,13 +3,13 @@ import bodyParser from "koa-bodyparser"
 import koaRouter from "koa-router"
 import serve from "koa-static"
 import mount from "koa-mount"
-import send from "koa-send"
 
 import { StaticRouter } from "react-router-dom"
 import { Provider } from "react-redux"
+import React from "react"
+import { renderToString } from "react-dom/server"
+import Html from "./html"
 import configureStore from "store/configureStore"
-
-import indexHtml from "./index.html"
 
 const todos = [
   { label: "Todo 1", completed: false }
@@ -69,10 +69,12 @@ app.use(async ctx => {
       </StaticRouter>
     </Provider>
   )
-})
 
-app.use(async ctx => {
-  await send(ctx, indexHtml)
+  const content = renderToString(
+    <Html />
+  )
+
+  ctx.body = `<!DOCTYPE html>\n${content}`
 })
 
 app.listen(3000, err => {
