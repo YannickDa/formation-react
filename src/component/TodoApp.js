@@ -8,7 +8,7 @@ export default class TodoApp extends Component {
   render() {
     return (
       <div className="TodoApp">
-        <TodoLinks />
+        <TodoLinks match={this.props.match} />
         <TodoList />
         <TodoAdd />
       </div>

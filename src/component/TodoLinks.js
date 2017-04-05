@@ -3,21 +3,23 @@ import { Link } from "react-router-dom"
 
 export default class TodoLinks extends Component {
   render() {
+    const matchUrl = this.props.match.url
+
     return (
       <div className="TodoLinks">
         Afficher : 
         <span>
-          <Link to={`${this.props.match}`}>
+          <Link to="/" className={matchUrl === "/" ? "active":""}>
             Tous
           </Link>
-        </span> | 
+        </span> |
         <span>
-          <Link to={`${this.props.match}/active`}>
+          <Link to="/active" className={matchUrl === "/active" ? "active":""}>
             Actives
           </Link>
         </span> | 
         <span>
-          <Link to={`${this.props.match}/completed`}>
+          <Link to="/completed" className={matchUrl === "/completed" ? "active":""}>
             Terminées
           </Link>
         </span>
