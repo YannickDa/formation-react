@@ -1,6 +1,12 @@
 const path = require("path")
 const config = require("./webpack.config")
 
+const moduleConfig = config.module
+moduleConfig.rules.push({
+  test: /\.html$/,
+  loader: "file-loader"
+})
+
 module.exports = {
   entry: "./src/server/index.js",
   output: {
@@ -8,5 +14,5 @@ module.exports = {
     filename: "server.js"
   },
   target: "node",
-  module: config.module,
+  module: moduleConfig
 }

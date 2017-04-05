@@ -5,6 +5,8 @@ import serve from "koa-static"
 import mount from "koa-mount"
 import send from "koa-send"
 
+import indexHtml from "./index.html"
+
 const app = new Koa()
 
 app.use(mount("/assets", serve("assets")))
@@ -16,7 +18,7 @@ app.use(router.routes())
    .use(router.allowedMethods())
 
 app.use(async ctx => {
-  await send(ctx, "index.html")
+  await send(ctx, indexHtml)
 })
 
 app.listen(3000, err => {
