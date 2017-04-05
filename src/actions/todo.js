@@ -21,9 +21,19 @@ export const addTodo = todo => {
 }
 
 export const completeTodo = todo => {
-  return {
-    type: COMPLETE_TODO,
-    data: todo
+  return dispatch => {
+    dispatch({
+      type: COMPLETE_TODO,
+      data: todo
+    })
+
+    return fetch("/todo/completed", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(todo)
+    })
   }
 }
 
