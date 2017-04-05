@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Route } from "react-router-dom"
 
-import TodoApp from "./component/TodoApp"
+import TodoApp from "./TodoApp"
 
 export default class Application extends Component {
   render() {

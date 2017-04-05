@@ -4,9 +4,9 @@ import { render as renderDOM } from "react-dom"
 import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 
-import configureStore from "./store/configureStore"
+import configureStore from "../store/configureStore"
 
-import App from "./app"
+import App from "../component/app"
 
 const store = configureStore()
 
@@ -27,5 +27,5 @@ const render = Container =>
 render(App)
 
 if (module.hot) {
-  module.hot.accept("./app", () => render(App))
+  module.hot.accept("../component/app", () => render(App))
 }
