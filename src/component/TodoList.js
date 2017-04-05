@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { completeTodo } from "../actions/todo"
+import { completeTodo, getTodos } from "../actions/todo"
 
 class Todo extends Component {
   constructor(props, children) {
@@ -33,6 +33,10 @@ class TodoList extends Component {
     this.props.completeTodo(todo)
   }
 
+  componentWillMount() {
+    this.props.getTodos()
+  }
+
   render() {
     return (
       <ul className="TodoList">
@@ -56,7 +60,8 @@ const connectedTodoList = connect((store, ownProps) => {
     ))
   }
 }, dispatch => ({
-  completeTodo: (todo) => dispatch(completeTodo(todo))
+  completeTodo: (todo) => dispatch(completeTodo(todo)),
+  getTodos: () => dispatch(getTodos())
 }))(TodoList)
 
 export default connectedTodoList
