@@ -28,6 +28,24 @@ router.post("/todo", async ctx => {
   ctx.body = null
 })
 
+router.put("/todo/completed", async ctx => {
+  const todo = ctx.request.body
+
+  let idx = false
+  let i = 0
+  while (i < todos.length && idx === false) {
+    if (todo.label === todos[i].label) {
+      idx = i
+    }
+    ++i
+  }
+
+  if (idx !== false) {
+    todos[idx].completed = true
+  }
+  ctx.body = null
+})
+
 app.use(router.routes())
    .use(router.allowedMethods())
 
