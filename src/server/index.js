@@ -10,6 +10,7 @@ import React from "react"
 import { renderToString } from "react-dom/server"
 import Html from "./html"
 import configureStore from "store/configureStore"
+import App from "component/app"
 
 const todos = [
   { label: "Todo 1", completed: false }
@@ -66,12 +67,13 @@ app.use(async ctx => {
   const component = (
     <Provider store={store}>
       <StaticRouter location={location} context={context}>
+        <App />
       </StaticRouter>
     </Provider>
   )
 
   const content = renderToString(
-    <Html />
+    <Html component={component} store={store} />
   )
 
   ctx.body = `<!DOCTYPE html>\n${content}`
